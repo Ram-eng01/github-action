@@ -2,8 +2,7 @@ name: First Workflow
 
 on:
   push:
-    branches: 
-      - main
+    branches: [ main ]
 
 jobs:
   basic-demo:
