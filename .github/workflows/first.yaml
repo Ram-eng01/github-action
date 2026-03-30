@@ -4,7 +4,7 @@ on: [ push ]
 
 jobs:
   info:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Print host name
         run: hostname
@@ -16,7 +16,7 @@ jobs:
         run: cat /etc/os-release
 
   files:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: create-file
         run: echo "KK FUNDA TEST FILE" > demo.txt
@@ -28,7 +28,7 @@ jobs:
         run: ls -l
 
   env-demo:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Print predefined env
@@ -40,7 +40,7 @@ jobs:
           echo "My name is $MYNAME"
 
   strings:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: convert to uppercase
         run: echo "kk funda" | tr 'a-z' 'A-Z'
