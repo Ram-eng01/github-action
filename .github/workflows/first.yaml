@@ -1,24 +1,49 @@
-name: First Workflow
+name: Sysytem info and multiple jobs
 
-on:
-  push:
-    branches: [ main ]
+on: [ push ]
 
 jobs:
-  basic-demo:
-    runs-on: ubuntu-latest
+  info:
+    run-on: ubuntu-latest
+    steps:
+      - name: Print host name
+        run: hostname
+
+      - name: kernel info
+        run: uname -run
+
+      - name: show OS info
+        run: cat /etc/os-release
+
+  files:
+    run-on: ubuntu-latest
+    steps:
+      - name: create-file
+        run: echo "KK FUNDA TEST FILE" > demo.txt
+
+      - name: Show file content
+        run: cat demo.txt
+
+      - name: List directory
+        run: ls -l
+
+  env-demo:
+    run-on: ubuntu-latest
 
     steps:
-      - name: say Hello
-        run: echo "Hello Rammohan"
+      - name: Print predefined env
+        run: echo "repo name is $GITHUB_REPOSITORY"
 
-      - name: Show linux version
-        run: uname -a
+      - name: set and print custom env
+        run: |
+          MYNAME="Rammohan"
+          echo "My name is $MYNAME"
 
-      - name: Print current user
-        run: ls -ltr
-
-      - name: print date and time
-        run: date
-
+  strings:
+    run-on: ubuntu-latest
+    steps:
+      - name: convert to uppercase
+        run: echo "kk funda" | tr 'a-z' 'A-Z'
+      - name: Word count
+        run: echo "GitHub Actions Training" | wc -w
   
