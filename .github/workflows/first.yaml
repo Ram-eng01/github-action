@@ -10,7 +10,7 @@ jobs:
         run: hostname
 
       - name: kernel info
-        run: uname -run
+        run: uname -r
 
       - name: show OS info
         run: cat /etc/os-release
