@@ -1,0 +1,25 @@
+name: First Workflow
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  basic-demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: say Hello
+        run: echo "Hello Rammohan"
+
+      - name: Show linux version
+        run: uname -a
+
+      - name: Print current user
+        run: ls -ltr
+
+      - name: print date and time
+        run: date
+
+  
