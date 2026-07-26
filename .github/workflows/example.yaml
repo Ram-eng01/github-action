@@ -13,5 +13,5 @@ jobs:
       - name: say hello
         run: echo "$Gretting $First_name. Today is $DAY_OF_WEEK"
         env:
-          First_name: Ram
+          First_name: Ram    $GITHUB_STEP_SUMMARY
       
