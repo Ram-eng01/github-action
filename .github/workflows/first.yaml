@@ -1,6 +1,6 @@
 name: Sysytem info and multiple jobs
 
-on: [ push ]
+on: 
 
 jobs:
   info:
